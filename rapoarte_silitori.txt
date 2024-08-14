@@ -1,0 +1,7 @@
+Nume: Ion, Ore Lucrate: 9.0
+Nume: Maria, Ore Lucrate: 9.0
+Nume: Andrei, Ore Lucrate: 8.5
+Nume: Elena, Ore Lucrate: 9.0
+Nume: Gabriela, Ore Lucrate: 9.0
+Nume: Radu, Ore Lucrate: 9.0
+Nume: Ioana, Ore Lucrate: 8.5

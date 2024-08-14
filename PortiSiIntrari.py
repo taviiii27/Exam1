@@ -161,7 +161,6 @@ def JSONFile():
             if key not in input:
                 return jsonify({"eroare": f"Valoare negăsită pentru cheia '{key}'!"}), 400
         
-        # Introduce date în tabela 'poarta2'
         conn = mysql.connector.connect(host='localhost', user='root', password='root', database='virtuals')
         cursor = conn.cursor()
         cursor.execute("""

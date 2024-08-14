@@ -72,9 +72,6 @@ class InitiereBazaDate(ABC):
         self.db = db
 
 
-import mysql.connector
-from datetime import datetime
-
 class Prezenta:
     def __init__(self, db_connection):
         self.db = db_connection
@@ -157,9 +154,6 @@ class GeneratorDeRapoarte:
                 file.write(f"Nume: {detalii['nume']}, Ore Lucrate: {detalii['ore_lucrate']}\n")
 
         print(f"Rapoarte generate în '{self.folder_backup}'.")
-import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 
 class TrimitereNotificari:
     def __init__(self, email_trimitator, email_parola):

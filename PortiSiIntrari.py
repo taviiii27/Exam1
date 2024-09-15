@@ -115,7 +115,7 @@ class ManagerFisiere:
                                         if row:  # Asigură-te că rândul nu este gol
                                             print(f"Adăugare în baza de date: {row[0]}")
                                             query = 'INSERT INTO access (numar_poarta, tip_fisier, data_acces) VALUES (%s, %s, %s)'
-                                            values = (nume_poarta_int, extensie[1:], row[0])  # Elimină punctul din extensie
+                                            values = (nume_poarta_int, extensie[1:], row[0])  # cu acest rand elimin punctul din extensie
                                             db.executeConexiune(query, values)
                                 # Mută fișierul după procesare
                                 backup_path = os.path.join(self.backup_folder, file)
@@ -123,7 +123,7 @@ class ManagerFisiere:
                                 print(f"Mutat fișierul {file} în folderul de backup.")
                         except Exception as e:
                             print(f"Eșec la procesarea fișierului {file}: {str(e)}")
-            time.sleep(20)  # Așteaptă 20 de secunde înainte de a verifica din nou
+            time.sleep(20)  
 
 class PoartaFisiereIntrari:
     def __init__(self, backup_folder, folder_entries):

@@ -53,8 +53,8 @@ class ManagerFisiere:
         self.backup_folder = backup_folder
         self.folder_entries = folder_entries
         self.ensure_directories()
-        self.create_test_files()  # Crează fișierele de test pentru testare
-
+        self.create_test_files()  
+        
     def ensure_directories(self):
         """ Asigură că directoarele necesare există. """
         if not os.path.exists(self.backup_folder):
@@ -112,12 +112,12 @@ class ManagerFisiere:
                                 with open(file_path, 'r') as fisier:
                                     reader = csv.reader(fisier)
                                     for row in reader:
-                                        if row:  # Asigură-te că rândul nu este gol
+                                        if row: 
                                             print(f"Adăugare în baza de date: {row[0]}")
                                             query = 'INSERT INTO access (numar_poarta, tip_fisier, data_acces) VALUES (%s, %s, %s)'
                                             values = (nume_poarta_int, extensie[1:], row[0])  # cu acest rand elimin punctul din extensie
                                             db.executeConexiune(query, values)
-                                # Mută fișierul după procesare
+                    
                                 backup_path = os.path.join(self.backup_folder, file)
                                 shutil.move(file_path, backup_path)
                                 print(f"Mutat fișierul {file} în folderul de backup.")
